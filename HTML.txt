@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://use.fontawesome.com/be1ba39dfe.js"></script>
+    <link rel="stylesheet" href="products.css">
+    <title>Book Zone</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .popup-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.5);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1000;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .popup {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .popup h2 {
+            color: #3498db;
+            /* Use a different color for the heading */
+            margin-bottom: 10px;
+        }
+
+        .popup p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .popup-close {
+            background: #3498db;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .popup-close:hover {
+            background: #2980b9;
+            /* Darker color on hover */
+        }
+
+        .popup-container.active {
+            visibility: visible;
+            opacity: 1;
+        }
+
+
+
+
+        .cart {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        .cart-item {
+            margin-bottom: 10px;
+        }
+
+        .cart-total {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-right">
+            <li><a href=" ">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+        </div>
+    </nav>
+
+    <div class="section-body">
+        <div class="vertical-nav">
+            <ul>
+                <h4>
+                    <left>Category</left>
+                </h4>
+                <li><a href="products.html">Adventure</a></li>
+            </ul>
+        </div>
+
+        <div class="gallery-main" style="margin-left:25%;padding:1px 16px;height:1000px;">
+            <div class="Adventure" id="Adventure">
+                <h2>Adventure</h2>
+                <div class="gallery">
+                    <div class="image-holder">
+                        <a href="#" oneclick="addToCart('Item 1',200)">
+                            <img src="https://media.harrypotterfanzone.com/chamber-of-secrets-uk-childrens-edition-2014.jpg"
+                                alt="img-1">
+                        </a>
+                        <div class="desc">
+                            Price : 200
+                            <br>
+                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                            <button onclick="addToCart('Item 1', 200)">
+                                Buy
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="image-holder">
+                        <a href="#" oneclick="addToCart('Item 2',250)">
+                            <img src="https://i.pinimg.com/1200x/b2/d7/b6/b2d7b6822281373a2254ef576e95c280.jpg"
+                                alt="img-1">
+                        </a>
+                        <div class="desc">
+                            Price : 250
+                            <br>
+                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                            <button onclick="addToCart('Item 2', 250)">
+                                Buy
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="image-holder">
+                        <a href="#" oneclick="addToCart('Item 3',390)">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPbUKFDPZ0SZ3tJq9PIMWsU7o6cT6IJLnKzA&usqp=CAU"
+                                alt="img-1">
+                        </a>
+                        <div class="desc">
+                            Price : 390
+                            <br>
+                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                            <button onclick="addToCart('Item 3', 390)">
+                                Buy
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="image-holder">
+                        <a href="#" oneclick="addToCart('Item 4',100)">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhR6PNZZ3ydbAKg-D8Yft0FKetGPruf6qBBw&usqp=CAU"
+                                alt="img-1">
+                        </a>
+                        <div class="desc">
+                            Price : 100
+                            <br>
+                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                            <button onclick="addToCart('Item 4', 100)">
+                                Buy
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="image-holder">
+                        <a href="#" oneclick="addToCart('Item 5',304)">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQk5PShh5Epe1_J2Oj12xUqqSRE0aCBrVXhDA&usqp=CAU"
+                                alt="img-1">
+                        </a>
+                        <div class="desc">
+                            Price : 304
+                            <br>
+                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                            <button onclick="addToCart('Item 5', 304)">
+                                Buy
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="image-holder">
+                        <a href="#" oneclick="addToCart('Item 6',340)">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoMWVNYHAotr14Qrt4qCbIU6nd0aDyl0D-iw&usqp=CAU"
+                                alt="img-1">
+                        </a>
+                        <div class="desc">
+                            Price : 340
+                            <br>
+                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                            <button onclick="addToCart('Item 6', 340)">
+                                Buy
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="image-holder">
+                        <a href="#" oneclick="addToCart('Item 7',340)">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCOchrwFWg1_GIwUl9UtQn4pu6hlM0FbWfTA&usqp=CAU"
+                                alt="img-1">
+                        </a>
+                        <div class="desc">
+                            Price : 340
+                            <br>
+                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                            <button onclick="addToCart('Item 7', 340)">
+                                Buy
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="image-holder">
+                        <a href="#" oneclick="addToCart('Item 8',340)">
+                            <img src="https://marketplace.canva.com/EAFdDOP7Cpc/1/0/1003w/canva-dramatic-outdoor-adventure-photocentric-book-cover-SmDiNQo9Hp0.jpg"
+                                alt="img-1">
+                        </a>
+                        <div class="desc">
+                            Price : 340
+                            <br>
+                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                            <button onclick="addToCart('Item 8', 340)">
+                                Buy
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="image-holder">
+                        <a href="#" oneclick="addToCart('Item 9',340)">
+                            <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/fantasy-adventure-historic-book-cover-design-template-96200f8cb56b1512618b430b764d5b64_screen.jpg?ts=1637007902"
+                                alt="img-1">
+                        </a>
+                        <div class="desc">
+                            Price : 340
+                            <br>
+                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                            <button onclick="addToCart('Item 9', 340)">
+                                Buy
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="image-holder">
+                        <a href="#" oneclick="addToCart('Item 10',340)">
+                            <img src="https://www.ikaruna.eu/wp-content/uploads/2020/07/balvur2-330x495.jpg"
+                                alt="img-1">
+                        </a>
+                        <div class="desc">
+                            Price : 340
+                            <br>
+                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                            <button onclick="addToCart('Item 10', 340)">
+                                Buy
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="image-holder">
+                        <a href="#" oneclick="addToCart('Item 11',340)">
+                            <img src="https://c8.alamy.com/comp/2FME9EP/enid-blytons-the-island-of-adventure-book-ascot-berkshire-england-united-kingdom-2FME9EP.jpg"
+                                alt="img-1">
+                        </a>
+                        <div class="desc">
+                            Price : 340
+                            <br>
+                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                            <button onclick="addToCart('Item 11', 340)">
+                                Buy
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="image-holder">
+                        <a href="#" oneclick="addToCart('Item 12',340)">
+                            <img src="https://www.flintlockcovers.com/wp-content/uploads/2023/05/hd-final-ebook-wm-promo.jpg"
+                                alt="img-1">
+                        </a>
+                        <div class="desc">
+                            Price : 340
+                            <br>
+                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                            <button onclick="addToCart('Item 12', 340)">
+                                Buy
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    </div>
+    </div>
+    <button>
+        <a href="plugin.html" target="_blank" method="post">Leave</a>
+    </button>
+    </div>
+    </div>
+    </div>
+    </div>
+
+    <div class="cart" id="cart">
+        <h2>Shopping Cart</h2>
+        <div id="cart-items"></div>
+        <div class="cart-total">Total: $<span id="cart-total">0</span></div>
+        <br>
+        <div>
+            <button>Proceed to order</button>
+
+        </div>
+        <BR>
+        <BR>
+
+        <div>
+            <label for="couponCode">Enter coupon code:</label>
+            <input type="text" id="couponCode" placeholder="Coupon code">
+            <button onclick="applyCoupon()">Apply Coupon</button>
+        </div>
+
+    </div>
+
+    <div class="popup-container" id="popupContainer">
+        <div class="popup">
+            <h2>Special Offer!</h2>
+            <p><b>Get 20% cashback on your first purchase. Limited time offer!</b></p>
+            <button class="popup-close" onclick="closePopup()">Close</button>
+        </div>
+    </div>
+
+    <script>
+        // Open the popup after a delay (e.g., 3 seconds)
+        setTimeout(openPopup, 3000);
+
+        function openPopup() {
+            var popupContainer = document.getElementById('popupContainer');
+            popupContainer.classList.add('active');
+        }
+
+        function closePopup() {
+            var popupContainer = document.getElementById('popupContainer');
+            popupContainer.classList.remove('active');
+        }
+
+        var cartItems = [];
+        var cartTotal = 0;
+
+        function addToCart(itemName, itemPrice) {
+            cartItems.push({ name: itemName, price: itemPrice });
+            cartTotal += itemPrice;
+
+            updateCart();
+        }
+
+        function updateCart() {
+            var cartItemsContainer = document.getElementById('cart-items');
+            var cartTotalContainer = document.getElementById('cart-total');
+
+            cartItemsContainer.innerHTML = '';
+            cartTotalContainer.textContent = cartTotal.toFixed(2);
+
+            cartItems.forEach(function (item) {
+                var cartItemDiv = document.createElement('div');
+                cartItemDiv.classList.add('cart-item');
+                cartItemDiv.textContent = item.name + ' - $' + item.price.toFixed(2);
+                cartItemsContainer.appendChild(cartItemDiv);
+            });
+        }
+    </script>
+
+</body>
+
+</html>
