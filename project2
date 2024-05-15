@@ -1,11 +1,11 @@
 body {margin:0; background-image: url("https://th.bing.com/th/id/R.1f653ca455ccf27617630adc0a7a6152?rik=8hna0vnUI0ALvQ&riu=http%3a%2f%2fwallpapercave.com%2fwp%2fIlpLRYK.jpg&ehk=W5Nsgs7%2bq55LBWsH671K094zNKfZN5jUmqWDQ6ZoFxo%3d&risl=&pid=ImgRaw&r=0");}
 
 .navbar{
-  display: flex;
+  display:   flex;
   background-color:rgb(218,165,32);
   position: fixed;
   top:0;
-  width: 100%;
+  width: 200%;
   font-size: 20px;
 }
 
@@ -26,23 +26,13 @@ body {margin:0; background-image: url("https://th.bing.com/th/id/R.1f653ca455ccf
     text-decoration: none;
     color:white;
   }
+  
 
   .nav-right  li ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    overflow: hidden;
-    background-color: #333;
-  }
-
-  .nav-right a:hover{
-    background-color: rgb(167, 70, 70);
-  }
-  /* .nav-right li a:hover {
-    background-color: rgb(218,165,32);
-  } */
-/* 
-  .nav-right .active {
+ht .active {
     background-color: rgb(218,165,32);
   } */
 
@@ -51,15 +41,16 @@ body {margin:0; background-image: url("https://th.bing.com/th/id/R.1f653ca455ccf
 
 .section-body{
     
-    padding-top: 30px;
+    padding-top: 0px;
     padding-left: 15px;
 }
 .section-body h4{
     font-size: large;
+
 }
 
 .vertical-nav
-{
+{4
     padding-top: 10px;
 }
 
